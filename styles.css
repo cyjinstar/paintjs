@@ -10,7 +10,7 @@ body {
 
 .canvas{
     width: 700px;
-    height: 700px;
+    height: 500px;
     background-color: floralwhite;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -18,7 +18,33 @@ body {
 
 .controls {
     margin-top: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls  .controls__btns {
+    margin-bottom: 30px;
+}
+
+.controls__btns button {
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(240, 234, 204);
+    padding: 3px 5px;
+    width:  60px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(240, 234, 204, 0.8);
+    color:rgba(0, 0, 0, 0.55);
+    font-weight: 800;
+    font-size:16px;
+}
+
+.controls__btns button:active {
+    transform: scale(0.9);
 }
 
 .controls .controls__colors {
@@ -32,4 +58,40 @@ body {
     border-radius: 25px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.controls .controls__range input[type=range] {
+    -webkit-appearance: none; /* 기본슬라이드 숨기기*/
+    width: 100%; /* Firefox에서는 특정한 넓이가 필요*/
+    background: transparent; /* Chrome에서 투명하게 출력 */
+    margin-bottom: 25px;
+  }
+  
+  .controls .controls__range input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+}
+  
+.controls .controls__range input[type=range]:focus {
+    outline: none; /* input range에 포커스 되었을 경우 기본 블러처리 제거 */
+}
+
+.controls .controls__range input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: #2497E3;
+}
+.controls .controls__range input[type=range]::-webkit-slider-thumb {
+    border: 1px solid #2497E3;
+    height: 15px;
+    width: 10px;
+    background: #ffffff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.161);
+    cursor: pointer;
+    box-shadow: -100% 0 0 100% #f4f4f4;
+    -webkit-appearance: none;
+    margin-top: -5px; /*chrome의 경우 margin-top값을 부여해야합니다.*/
+}
+.controls .controls__range input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #2497E3; /*네모버튼에 포커스를 줬을때 뒤에 라인(ㅡ)의 효과*/
 }
